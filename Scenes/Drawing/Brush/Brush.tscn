@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnoq4k7pyf2te"]
+
+[ext_resource type="Script" uid="uid://bhy66hvv7ols4" path="res://Scenes/Drawing/Brush/brush.gd" id="1_ir4fq"]
+
+[node name="Brush" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ir4fq")
