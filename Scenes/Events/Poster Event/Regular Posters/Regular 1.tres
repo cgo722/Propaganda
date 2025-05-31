@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ScenarioResource" load_steps=2 format=3 uid="uid://bvk8i2whi6rs3"]
+
+[ext_resource type="Script" uid="uid://c5vcbbjy3h0rm" path="res://Scenes/Events/ScenarioResource.gd" id="1_otc4d"]
+
+[resource]
+script = ExtResource("1_otc4d")
+title = ""
+body_text = ""
+is_poster = true
+tags = Array[String]([])
+requirements = Array[String]([])
+effects = {}
+metadata/_custom_type_script = "uid://c5vcbbjy3h0rm"

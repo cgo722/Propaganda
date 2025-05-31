@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=2 format=3 uid="uid://drw0t80ih0s4o"]
+
+[ext_resource type="Script" uid="uid://bliww08418swj" path="res://PlayerResource.gd" id="1_vo43o"]
+
+[resource]
+script = ExtResource("1_vo43o")
+player_name = "The Royal Illustrator"
+age = 15
+favor = 5
+society = 5
+chaos = 0
+tools_unlocked = Array[String](["brush_basic", "black"])
+current_modifiers = Array[String]([])
+scenario_history = Array[Resource]([])
+turns_survived = 0
+metadata/_custom_type_script = "uid://bliww08418swj"
