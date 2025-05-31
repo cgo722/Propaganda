@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b80w8xfo5xyax"]
+[gd_scene load_steps=6 format=3 uid="uid://b80w8xfo5xyax"]
 
 [ext_resource type="Script" uid="uid://dtkq4iryfab8v" path="res://Gamemanager.gd" id="1_3mqji"]
 [ext_resource type="PackedScene" uid="uid://dpvj5c0rs5yt7" path="res://Scenes/UI/Main Menu.tscn" id="2_rpqi1"]
 [ext_resource type="Resource" uid="uid://drw0t80ih0s4o" path="res://Player.tres" id="2_uxrcv"]
 [ext_resource type="PackedScene" uid="uid://bwucweamgsob8" path="res://Scenes/Drawing/Drawing Canvas.tscn" id="2_x4av3"]
+[ext_resource type="PackedScene" uid="uid://dcfxn6v5w7xo4" path="res://Scenes/Events/EventUI.tscn" id="3_rf2cd"]
 
 [node name="Gamemanager" type="Node"]
 script = ExtResource("1_3mqji")
 player_resource = ExtResource("2_uxrcv")
+event_ui_scene = ExtResource("3_rf2cd")
 main_menu_scene = ExtResource("2_rpqi1")
 canvas_scene = ExtResource("2_x4av3")

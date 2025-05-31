@@ -7,3 +7,4 @@ class_name ScenarioResource
 @export var tags: Array[String] = []
 @export var requirements: Array[String] = []
 @export var effects: Dictionary = {}
+@export var image: Texture2D

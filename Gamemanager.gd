@@ -3,8 +3,7 @@ extends Node
 enum GameState { MENU, PLAYING, EVENT, RESULT, GAME_OVER }
 
 @export var player_resource: Resource
-
-var current_state: GameState = GameState.MENU
+@export var event_ui_scene: PackedScene
 
 @export var poster_events: Array[Resource] = []
 @export var council_events: Array[Resource] = []
@@ -14,6 +13,8 @@ var current_state: GameState = GameState.MENU
 
 var preloaded_poster_events: Array[Resource] = []
 var preloaded_council_events: Array[Resource] = []
+
+var current_state: GameState = GameState.MENU
 
 func _ready():
 	preload_random_events()
@@ -98,11 +99,11 @@ func _on_start_game():
 	if main_menu:
 		main_menu.queue_free()
 
-	if not canvas_scene:
-		push_error("canvas_scene is not assigned.")
+	if not event_ui_scene:
+		push_error("event_ui_scene is not assigned.")
 		return
-	var canvas = canvas_scene.instantiate()
-	add_child(canvas)
+	var event_ui = event_ui_scene.instantiate()
+	add_child(event_ui)
 	if player_resource:
 		print("Loaded player resource:", player_resource)
 	else:
