@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ScenarioResource" load_steps=3 format=3 uid="uid://d35ih733a48yq"]
+
+[ext_resource type="Texture2D" uid="uid://dtpi7cehtmo4l" path="res://icon.svg" id="1_khstm"]
+[ext_resource type="Script" uid="uid://c5vcbbjy3h0rm" path="res://Scenes/Events/ScenarioResource.gd" id="1_xur8l"]
+
+[resource]
+script = ExtResource("1_xur8l")
+title = "The council has voted for poop"
+body_text = "asdfasdf"
+is_poster = false
+tags = Array[String]([])
+requirements = Array[String]([])
+effects = {}
+image = ExtResource("1_khstm")
+metadata/_custom_type_script = "uid://c5vcbbjy3h0rm"

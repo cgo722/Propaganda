@@ -103,9 +103,46 @@ func _on_start_game():
 		push_error("event_ui_scene is not assigned.")
 		return
 	var event_ui = event_ui_scene.instantiate()
+	event_ui.name = "EventUI"
 	add_child(event_ui)
 	if player_resource:
 		print("Loaded player resource:", player_resource)
 	else:
 		push_error("player_resource is not assigned.")
+
 	set_state(GameState.PLAYING)
+
+func _on_screen_clicked():
+	if preloaded_poster_events.is_empty() and preloaded_council_events.is_empty():
+		preload_random_events()
+
+	var next_event: Resource = null
+
+	if randi() % 2 == 0 and not preloaded_poster_events.is_empty():
+		next_event = preloaded_poster_events.pop_front()
+	elif not preloaded_council_events.is_empty():
+		next_event = preloaded_council_events.pop_front()
+	elif not preloaded_poster_events.is_empty():
+		next_event = preloaded_poster_events.pop_front()
+
+	var event_ui = get_node("EventUI") # Assumes EventUI node name
+	if next_event and event_ui and event_ui.has_method("display_scenario"):
+		event_ui.display_scenario(next_event)
+
+		if next_event.has_method("is_poster") and next_event.is_poster:
+			event_ui.anchor_right = 1.0
+			event_ui.anchor_bottom = 0.3
+			event_ui.margin_left = 0
+			event_ui.margin_top = 0
+			event_ui.margin_right = 400
+			event_ui.margin_bottom = 200
+
+			if canvas_scene:
+				var canvas = canvas_scene.instantiate()
+				add_child(canvas)
+			else:
+				push_error("canvas_scene is not assigned.")
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		_on_screen_clicked()
