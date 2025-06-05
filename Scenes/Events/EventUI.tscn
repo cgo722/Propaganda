@@ -6,6 +6,7 @@
 bg_color = Color(0.728883, 0.561414, 0.431656, 1)
 
 [node name="EventUi" type="Control" node_paths=PackedStringArray("title_label", "body_label", "image_texture")]
+z_index = 4096
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
